@@ -34,7 +34,7 @@ async def activity(message: types.Message):
         question = message.text
         msg_for_stuff = text("Заявка #", bold(str(message.message_id)), " от ", bold(message.from_user.username),
                              " создал(а) вопрос:\n", question, sep="")
-        id_message_in_stuff_group = await bot.send_message(STUFF_CHAT_ID, msg_for_stuff, parse_mode=ParseMode.MARKDOWN)
+        id_message_in_stuff_group = await bot.send_message(STUFF_CHATS_ID, msg_for_stuff, parse_mode=ParseMode.MARKDOWN)
         # Регистрация вопроса
         request_registration(id_message_in_stuff_group.message_id, message)
 
